@@ -33,18 +33,19 @@ public class ContactsPresenter implements ContactsContract.Presenter<ContactsCon
 
     private Call<List<Contact>> listCall;
     private Context context;
+    private Preferences preferences;
 
     @Inject
     public ContactsPresenter(ContactsApi contactsApi,
-                             ProgressBarProvider progressBarProvider){
+                             ProgressBarProvider progressBarProvider, Preferences preferences){
         this.contactsApi = contactsApi;
         this.progressBarProvider = progressBarProvider;
+        this.preferences = preferences;
     }
 
     @Override
     public void getContacts() {
         this.progressBarProvider.showProgressBar();
-        Preferences preferences = new Preferences(context);
 
         if (NetworkUtils.isNetworkAvailable(context)) {
 

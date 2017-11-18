@@ -47,7 +47,7 @@ public class ContactsActivity extends AppCompatActivity implements ProgressBarPr
         activityComponent = DaggerActivityComponent
                 .builder()
                 .applicationComponent(applicationComponent)
-                .presenterModule(new PresenterModule(this))
+                .presenterModule(new PresenterModule(this, this))
                 .build();
 
         setSupportActionBar(toolbar);

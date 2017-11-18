@@ -20,7 +20,7 @@ public interface ActivityComponent {
 
     void inject(DetailsFragment fragment);
 
-    ContactsPresenter repositoryPresenter();
+    ContactsPresenter contactsPresenter();
 
-    DetailsPresenter contactPresenter();
+    DetailsPresenter detailsPresenter();
 }
