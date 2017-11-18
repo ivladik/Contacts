@@ -46,12 +46,7 @@ import butterknife.ButterKnife;
         RecyclerView contactsRecyclerView;
         ContactsAdapter contactsAdapter;
 
-        private ContactsAdapter.ContactsItemClick contactsItemClickCallback = new ContactsAdapter.ContactsItemClick() {
-            @Override
-            public void OnContactsItemClick(View view, Contact item) {
-                onContactsItemClick(item);
-            }
-        };
+        private ContactsAdapter.ContactsItemClick contactsItemClickCallback = (view, item) -> onContactsItemClick(item);
 
         public static ContactsFragment newInstance(int sort) {
             ContactsFragment fragment = new ContactsFragment();
@@ -65,6 +60,7 @@ import butterknife.ButterKnife;
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            setRetainInstance(true);
 
             activityComponent = ((ContactsActivity) getActivity()).getActivityComponent();
 

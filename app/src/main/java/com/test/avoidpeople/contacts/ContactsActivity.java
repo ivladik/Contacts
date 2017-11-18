@@ -16,7 +16,6 @@ import com.test.avoidpeople.contacts.di_test.BaseApplication;
 import com.test.avoidpeople.contacts.di_test.DaggerActivityComponent;
 import com.test.avoidpeople.contacts.di_test.modules.PresenterModule;
 import com.test.avoidpeople.contacts.fragments_test.ContactsFragment;
-import com.test.avoidpeople.contacts.fragments_test.DetailsFragment;
 import com.test.avoidpeople.contacts.utils.FragmentUtility;
 
 import butterknife.BindView;
@@ -96,7 +95,7 @@ public class ContactsActivity extends AppCompatActivity implements ProgressBarPr
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(getSupportFragmentManager().getBackStackEntryCount() > 0){
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0){
             getSupportFragmentManager().popBackStack();
         }
     }
